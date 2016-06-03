@@ -1,0 +1,44 @@
+{
+  "name": "which-cloud",
+  "version": "1.0.0",
+  "description": "given an IP address, return which cloud provider it belongs to (EC2, GCE, etc)",
+  "main": "index.js",
+  "global": true,
+  "scripts": {
+    "pretest": "standard",
+    "test": "nyc mocha test/*.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bcoe/which-cloud.git"
+  },
+  "keywords": [
+    "cloud",
+    "lookup",
+    "ip"
+  ],
+  "author": "Ben Coe <ben@npmjs.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcoe/which-cloud/issues"
+  },
+  "homepage": "https://github.com/bcoe/which-cloud#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.9",
+    "mocha": "^2.5.3",
+    "nock": "^8.0.0",
+    "nyc": "^6.4.4",
+    "standard": "^7.1.1",
+    "standard-version": "^2.3.0"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "ip-range-check": "0.0.1",
+    "lodash.assign": "^4.0.9",
+    "request": "^2.72.0",
+    "yargs": "^4.7.1"
+  }
+}
