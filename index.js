@@ -1,7 +1,7 @@
 const parallel = require('async').parallel
 const ipRangeCheck = require('ip-range-check')
-const azure = require('./azure')
-const aws = require('./aws')
+const azure = require('./lib/azure')
+const aws = require('./lib/aws')
 
 module.exports = function (ip, done) {
   var name = 'unknown'
