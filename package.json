@@ -1,12 +1,12 @@
 {
   "name": "which-cloud",
   "version": "1.0.0",
-  "description": "given an IP address, return which cloud provider it belongs to (EC2, GCE, etc)",
+  "description": "given an ip address, return which cloud provider it belongs to (AWS, GCE, etc)",
   "main": "index.js",
   "global": true,
   "scripts": {
     "pretest": "standard",
-    "test": "nyc mocha test/*.js",
+    "test": "nyc mocha --timeout=2500 test/*.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "release": "standard-version"
   },
