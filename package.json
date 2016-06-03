@@ -47,6 +47,7 @@
   "files": [
     "lib/aws.js",
     "lib/azure.js",
+    "lib/gce.js",
     "LICENSE.txt",
     "data/PublicIPs.xml",
     "index.js",
