@@ -40,5 +40,9 @@
     "lodash.assign": "^4.0.9",
     "request": "^2.72.0",
     "yargs": "^4.7.1"
-  }
+  },
+  "files": [
+    "lib/aws.js",
+    "LICENSE.txt"
+  ],
 }
