@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "given an ip address, return which cloud provider it belongs to (AWS, GCE, etc)",
   "main": "index.js",
+  "bin": "bin/which-cloud.js",
   "global": true,
   "scripts": {
     "pretest": "standard",
@@ -46,6 +47,8 @@
     "lib/aws.js",
     "lib/azure.js",
     "LICENSE.txt",
-    "data/PublicIPs.xml"
+    "data/PublicIPs.xml",
+    "index.js",
+    "bin/which-cloud.js"
   ]
 }

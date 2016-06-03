@@ -2,7 +2,7 @@
 
 require('chai').should()
 
-const which = require('../lib/which')
+const which = require('../')
 
 describe('which', function () {
   it('returns appropriate response for azure ip', function (done) {
@@ -14,7 +14,7 @@ describe('which', function () {
   })
 
   it('returns appropriate response for aws ip', function (done) {
-    which('54.173.231.160', function (err, name) {
+    which('54.173.231.161', function (err, name) {
       if (err) return done(err)
       name.should.equal('aws')
       return done()
