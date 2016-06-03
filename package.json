@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "async": "^1.5.2",
+    "gce-ips": "^1.0.2",
     "ip-range-check": "0.0.1",
     "lodash.assign": "^4.0.9",
     "request": "^2.72.0",

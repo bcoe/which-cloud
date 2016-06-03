@@ -2,6 +2,7 @@ const parallel = require('async').parallel
 const ipRangeCheck = require('ip-range-check')
 const azure = require('./lib/azure')
 const aws = require('./lib/aws')
+const gce = require('./lib/gce')
 
 module.exports = function (ip, done) {
   var name = 'unknown'
@@ -17,6 +18,15 @@ module.exports = function (ip, done) {
     },
     function (cb) {
       check(ip, aws(), function (err, _name) {
+        if (err) return cb(err)
+        else {
+          if (_name) name = _name
+          return cb()
+        }
+      })
+    },
+    function (cb) {
+      check(ip, gce(), function (err, _name) {
         if (err) return cb(err)
         else {
           if (_name) name = _name
