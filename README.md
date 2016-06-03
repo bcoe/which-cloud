@@ -1,6 +1,6 @@
 # which-cloud
 
-[![Build Status](https://travis-ci.org/bcoe/gce-ips.svg)](https://travis-ci.org/bcoe/gce-ips)
+[![Build Status](https://travis-ci.org/bcoe/which-cloud.svg)](https://travis-ci.org/bcoe/which-cloud)
 [![Coverage Status](https://coveralls.io/repos/github/bcoe/which-cloud/badge.svg?branch=master)](https://coveralls.io/github/bcoe/which-cloud?branch=master)
 [![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg)](https://github.com/conventional-changelog/standard-version)
 
