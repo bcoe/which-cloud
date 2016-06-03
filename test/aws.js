@@ -6,7 +6,7 @@ var AWS = require('../lib/aws')
 var nock = require('nock')
 
 describe('AWS', function () {
-  it('returns a list of IP ranges for the AWS service', function (done) {
+  it('returns a list of IP ranges for AWS', function (done) {
     var aws = AWS()
     aws.list(function (err, ranges) {
       if (err) return done(err)

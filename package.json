@@ -39,10 +39,13 @@
     "ip-range-check": "0.0.1",
     "lodash.assign": "^4.0.9",
     "request": "^2.72.0",
+    "xml2js": "^0.4.16",
     "yargs": "^4.7.1"
   },
   "files": [
     "lib/aws.js",
-    "LICENSE.txt"
+    "lib/azure.js",
+    "LICENSE.txt",
+    "data/PublicIPs.xml"
   ]
 }
