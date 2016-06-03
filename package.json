@@ -1,6 +1,6 @@
 {
   "name": "which-cloud",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "given an ip address, return which cloud provider it belongs to (AWS, GCE, etc)",
   "main": "index.js",
   "bin": "bin/which-cloud.js",
