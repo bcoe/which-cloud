@@ -21,6 +21,14 @@ describe('which', function () {
     })
   })
 
+  it('returns appropriate response for gce ip', function (done) {
+    which('104.196.27.39', function (err, name) {
+      if (err) return done(err)
+      name.should.equal('gce')
+      return done()
+    })
+  })
+
   it("returns 'unknown' if ip is not recognized", function (done) {
     which('9.9.9.9', function (err, name) {
       if (err) return done(err)
