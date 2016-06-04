@@ -1,6 +1,6 @@
 {
   "name": "which-cloud",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "given an ip address, return which cloud provider it belongs to (AWS, GCE, etc)",
   "main": "index.js",
   "bin": "bin/which-cloud.js",
@@ -41,6 +41,7 @@
     "ip-range-check": "0.0.1",
     "lodash.assign": "^4.0.9",
     "request": "^2.72.0",
+    "whois": "^2.1.6",
     "xml2js": "^0.4.16",
     "yargs": "^4.7.1"
   },
@@ -48,6 +49,7 @@
     "lib/aws.js",
     "lib/azure.js",
     "lib/gce.js",
+    "lib/whois.js",
     "LICENSE.txt",
     "data/PublicIPs.xml",
     "index.js",
