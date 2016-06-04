@@ -22,6 +22,11 @@ npm i which-cloud -g
 * Amazon Web Services (aws).
 * Google Compute Engine (gce).
 * Azure (azure)
+* _fallback to [whois](https://www.npmjs.com/package/whois) lookup._
+
+## Patches Welcome!
+
+I would love help adding support for more cloud services.
 
 ## License
 
