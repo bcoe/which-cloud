@@ -11,7 +11,7 @@ const ip = argv._[0]
 
 which(ip, function (err, cloud) {
   if (err) {
-    console.log('unknown')
+    console.log(which.default)
     process.exit(1)
   } else {
     console.log(cloud)

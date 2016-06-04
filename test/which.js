@@ -29,8 +29,16 @@ describe('which', function () {
     })
   })
 
+  it('falls back to whois organization', function (done) {
+    which('208.43.118.0', function (err, name) {
+      if (err) return done(err)
+      name.should.equal('Softlayer Corporate C')
+      return done()
+    })
+  })
+
   it("returns 'unknown' if ip is not recognized", function (done) {
-    which('9.9.9.9', function (err, name) {
+    which('999.999.999.999', function (err, name) {
       if (err) return done(err)
       name.should.equal('unknown')
       return done()

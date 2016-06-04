@@ -3,9 +3,10 @@ const ipRangeCheck = require('ip-range-check')
 const azure = require('./lib/azure')
 const aws = require('./lib/aws')
 const gce = require('./lib/gce')
+const whois = require('./lib/whois')
 
-module.exports = function (ip, done) {
-  var name = 'unknown'
+function WhichCloud (ip, done) {
+  var name = WhichCloud.default
   parallel([
     function (cb) {
       check(ip, azure(), function (err, _name) {
@@ -36,9 +37,22 @@ module.exports = function (ip, done) {
     }
   ], function (err) {
     if (err) return done(err)
-    else return done(null, name)
+
+    if (name === WhichCloud.default) {
+      whois(ip).org(function (err, _name) {
+        if (err) return done(err)
+        if (_name) name = _name
+        return done(null, name)
+      })
+    } else {
+      return done(null, name)
+    }
   })
 }
+
+WhichCloud.default = 'unknown'
+
+module.exports = WhichCloud
 
 function check (ip, cloud, cb) {
   cloud.list(function (err, ranges) {
