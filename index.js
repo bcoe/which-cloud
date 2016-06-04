@@ -1,24 +1,24 @@
 const parallel = require('async').parallel
 const ipRangeCheck = require('ip-range-check')
-
-const whois = require('./lib/whois')
-
 const providers = [
   require('./lib/azure'),
   require('./lib/aws'),
   require('./lib/gce')
 ]
+const whois = require('./lib/whois')
 
 function WhichCloud (ip, done) {
-  let name = WhichCloud.default
+  var name = WhichCloud.default
   function checkersGenerator (ip) {
     const checkers = []
-    providers.forEach(provider => {
-      checkers.push(cb => {
-        check(ip, provider(), (err = null, _name = null) => {
+    providers.forEach(function (provider) {
+      checkers.push(function (cb) {
+        check(ip, provider(), function (err, _name) {
           if (err) return cb(err)
-          if (_name) name = _name
-          return cb(null)
+          else {
+            if (_name) name = _name
+            return cb()
+          }
         })
       })
     })
