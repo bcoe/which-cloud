@@ -1,41 +1,31 @@
 const parallel = require('async').parallel
 const ipRangeCheck = require('ip-range-check')
-const azure = require('./lib/azure')
-const aws = require('./lib/aws')
-const gce = require('./lib/gce')
+const providers = [
+  require('./lib/azure'),
+  require('./lib/aws'),
+  require('./lib/gce')
+]
 const whois = require('./lib/whois')
 
 function WhichCloud (ip, done) {
   var name = WhichCloud.default
-  parallel([
-    function (cb) {
-      check(ip, azure(), function (err, _name) {
-        if (err) return cb(err)
-        else {
-          if (_name) name = _name
-          return cb()
-        }
+  function checkersGenerator (ip) {
+    const checkers = []
+    providers.forEach(function (provider) {
+      checkers.push(function (cb) {
+        check(ip, provider(), function (err, _name) {
+          if (err) return cb(err)
+          else {
+            if (_name) name = _name
+            return cb()
+          }
+        })
       })
-    },
-    function (cb) {
-      check(ip, aws(), function (err, _name) {
-        if (err) return cb(err)
-        else {
-          if (_name) name = _name
-          return cb()
-        }
-      })
-    },
-    function (cb) {
-      check(ip, gce(), function (err, _name) {
-        if (err) return cb(err)
-        else {
-          if (_name) name = _name
-          return cb()
-        }
-      })
-    }
-  ], function (err) {
+    })
+    return checkers
+  }
+
+  parallel(checkersGenerator(ip), function (err) {
     if (err) return done(err)
 
     if (name === WhichCloud.default) {
