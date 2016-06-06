@@ -32,7 +32,7 @@ describe('which', function () {
   it('falls back to whois organization', function (done) {
     which('208.43.118.0', function (err, name) {
       if (err) return done(err)
-      name.should.equal('Softlayer Corporate C')
+      name.should.match(/SoftLayer/)
       return done()
     })
   })
