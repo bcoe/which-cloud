@@ -6,6 +6,7 @@ const providers = [
   require('./lib/gce')
 ]
 const whois = require('./lib/whois')
+const publicIp = require('public-ip')
 
 function WhichCloud (ip, done) {
   var name = WhichCloud.default
@@ -25,19 +26,31 @@ function WhichCloud (ip, done) {
     return checkers
   }
 
-  parallel(checkersGenerator(ip), function (err) {
-    if (err) return done(err)
+  function runCheckers (ip, done) {
+    parallel(checkersGenerator(ip), function (err) {
+      if (err) return done(err)
 
-    if (name === WhichCloud.default) {
-      whois(ip).org(function (err, _name) {
-        if (err) return done(err)
-        if (_name) name = _name
+      if (name === WhichCloud.default) {
+        whois(ip).org(function (err, _name) {
+          if (err) return done(err)
+          if (_name) name = _name
+          return done(null, name)
+        })
+      } else {
         return done(null, name)
-      })
-    } else {
-      return done(null, name)
-    }
-  })
+      }
+    })
+  }
+
+  if (typeof ip === 'function') {
+    done = ip
+    publicIp.v4(function (err, hostIp) {
+      if (err) return done(err)
+      runCheckers(hostIp, done)
+    })
+  } else {
+    runCheckers(ip, done)
+  }
 }
 
 WhichCloud.default = 'unknown'
