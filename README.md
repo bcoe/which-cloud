@@ -7,15 +7,52 @@
 given an ip address, return which cloud provider it belongs to (EC2, GCE, etc)
 
 ```sh
-> which-cloud 104.196.27.39
-> gce
+$ which-cloud 104.196.27.39
+gce
+```
+
+if no ip is given, `which-cloud` will use the public ip of the current host
+
+```sh
+$ which-cloud
+AT&T Internet Services (SIS-80)
 ```
 
 ## Installing
 
+### CLI
+
 ```sh
 npm i which-cloud -g
 ```
+
+```sh
+which-cloud
+```
+
+### Module
+
+```sh
+npm i which-cloud --save
+```
+
+```js
+const whichCloud = require('which-cloud')
+```
+
+## API
+
+### `whichCloud([ip,] callback)`
+
+- `ip`: string, optional
+
+    Determine the cloud provider for this ip
+
+    If no ip is given, the public ip of the current host will be used
+
+- `callback`: function, required
+
+    Called with an `Error` or the determined cloud provider as a string
 
 ## Supported Clouds
 

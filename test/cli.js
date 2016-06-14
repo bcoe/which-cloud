@@ -1,13 +1,15 @@
 /* global describe, it */
 
-require('chai').should()
+const should = require('chai').should()
 
 const exec = require('child_process').exec
 
 describe('cli', function () {
-  it('displays help if no ip is provided', function (done) {
+  it('looks up host ip if no ip is provided', function (done) {
     exec('./bin/which-cloud.js', function (err, stdout, stderr) {
-      err.message.should.match(/you must provide an ip to lookup/)
+      should.not.exist(err)
+      stderr.should.be.empty
+      stdout.should.be.ok
       return done()
     })
   })
