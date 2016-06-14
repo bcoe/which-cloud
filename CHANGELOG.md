@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/bcoe/which-cloud/compare/v1.2.0...v1.3.0) (2016-06-14)
+
+
+### Bug Fixes
+
+* deleted repeating code ([#11](https://github.com/bcoe/which-cloud/issues/11)) ([99b6ca0](https://github.com/bcoe/which-cloud/commit/99b6ca0))
+* whois now reports slightly different company name ([ea9375b](https://github.com/bcoe/which-cloud/commit/ea9375b))
+
+
+### Features
+
+* lookup host ip if none given ([#14](https://github.com/bcoe/which-cloud/issues/14)) ([dbdc263](https://github.com/bcoe/which-cloud/commit/dbdc263))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/bcoe/which-cloud/compare/v1.1.1...v1.2.0) (2016-06-04)
 
