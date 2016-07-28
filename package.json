@@ -28,7 +28,7 @@
   "homepage": "https://github.com/bcoe/which-cloud#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "coveralls": "^2.11.9",
+    "coveralls": "^2.11.12",
     "mocha": "^2.5.3",
     "nock": "^8.0.0",
     "nyc": "^7.0.0",
