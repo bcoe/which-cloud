@@ -44,7 +44,7 @@
     "request": "^2.72.0",
     "whois": "^2.1.6",
     "xml2js": "^0.4.16",
-    "yargs": "^4.7.1"
+    "yargs": "^6.1.1"
   },
   "files": [
     "lib/aws.js",
