@@ -41,7 +41,7 @@
     "ip-range-check": "0.0.1",
     "lodash.assign": "^4.0.9",
     "public-ip": "^1.2.0",
-    "request": "^2.72.0",
+    "request": "^2.81.0",
     "whois": "^2.1.6",
     "xml2js": "^0.4.16",
     "yargs": "^4.7.1"
