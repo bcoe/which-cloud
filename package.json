@@ -36,7 +36,7 @@
     "standard-version": "^2.3.1"
   },
   "dependencies": {
-    "async": "^2.0.0",
+    "async": "^2.4.0",
     "gce-ips": "^1.0.2",
     "ip-range-check": "0.0.1",
     "lodash.assign": "^4.0.9",
