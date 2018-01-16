@@ -6,7 +6,7 @@ const which = require('../')
 
 describe('which', function () {
   it('returns appropriate response for azure ip', function (done) {
-    which('94.245.97.0', function (err, name) {
+    which('13.65.128.128', function (err, name) {
       if (err) return done(err)
       name.should.equal('azure')
       return done()

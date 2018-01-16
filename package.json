@@ -7,7 +7,7 @@
   "global": true,
   "scripts": {
     "pretest": "standard",
-    "test": "nyc mocha --timeout=2500 test/*.js",
+    "test": "nyc mocha --timeout=5000 test/*.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "release": "standard-version"
   },

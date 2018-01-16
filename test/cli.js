@@ -15,7 +15,7 @@ describe('cli', function () {
   })
 
   it('looks up an ip', function (done) {
-    exec('./bin/which-cloud.js 94.245.97.0', function (err, stdout, stderr) {
+    exec('./bin/which-cloud.js 13.65.128.128', function (err, stdout, stderr) {
       if (err) return done(err)
       stdout.should.match(/azure/)
       return done()
