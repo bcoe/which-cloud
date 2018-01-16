@@ -9,7 +9,7 @@ describe('Azure', function () {
     const azure = Azure()
     azure.list(function (err, ranges) {
       if (err) return done(err)
-      ranges.should.include('40.112.124.0/24')
+      ranges.should.include('13.65.0.0/16')
       return done()
     })
   })
